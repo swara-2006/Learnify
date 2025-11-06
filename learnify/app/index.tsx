@@ -1,22 +1,54 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Link } from 'expo-router';
+import { Image, StyleSheet, Text, View ,ScrollView} from 'react-native';
+import { Link,Redirect, router } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { images } from '../constants';
+import CustomButton from '../components/customButton';
 
 export default function App() {
   return (
-    <View className='flex-1 bg-white items-center justify-center '>
-      <Text>Learnify!</Text>
-      <StatusBar style="auto" />
-      <Link href="./home" style={{color:'blue'}}>Go to Home</Link>
-    </View>
+    <SafeAreaView className='bg-primary h-full'>
+      <ScrollView contentContainerStyle={{height: '100%'}}>
+        <View className="w-full min-h-[85vh] items-center justify-center px-4 ">
+          <Image
+          source={images.logo}
+          className='w-[200px] h-[100px]'
+          resizeMode='contain'
+           />
+           <Image
+           source={images.cards}
+           className='max-w-[380px] w-full h-[300px]'
+           resizeMode='contain'
+           />
+           <View className='relative mt-5'>
+            <Text className='text-3xl text-white font-bold text-center'>
+              Revise smarter in seconds — create and learn with {''}
+              <Text className='text-secondar-200'>Learnify</Text>
+            </Text>
+            <Image
+            source={images.path}
+            className='w-[136px] h-[15px] absolute -bottom-2 -right-8'
+            resizeMode='contain'/>
+           </View>
+           <Text className='text-sm font-pregular text-gray-100 mt-7 text-center'>
+            Transform your study routine with AI-powered flashcards. 
+           </Text>
+
+        </View>
+        <CustomButton
+        title='Continue with google'
+        handlePress={()=>router.push('./sign-in')}
+        containerStyles='w-3/4 mt-7 mx-auto rounded-lg'
+        
+
+        />
+
+      </ScrollView>
+      <StatusBar  backgroundColor='#161622' style="light" />
+
+
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
