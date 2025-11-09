@@ -6,6 +6,8 @@ import { Link } from 'expo-router'
 import {images} from '../../constants'
 import  CustomButton  from '../../components/customButton'
 import FormField from '../../components/FormField'
+
+
 export default function SignIn(){
     const [form,setForm]=useState({
         username:'',
@@ -13,6 +15,9 @@ export default function SignIn(){
         password:''
     })
     const [isSubmitting,setIsSubmitting]=useState(false)
+    const submit=()=>{
+        
+    }
     return(
         <SafeAreaView className='bg-primary h-full'>
             <ScrollView>
@@ -48,7 +53,7 @@ export default function SignIn(){
                     />
                     <CustomButton
                     title='Sign In'
-                    handlePress={()=>{}}
+                    handlePress={submit}
                     containerStyles='mt-7'
                     isLoading={isSubmitting}
                     />
