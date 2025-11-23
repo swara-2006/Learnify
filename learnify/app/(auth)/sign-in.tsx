@@ -42,7 +42,7 @@ export default function SignIn() {
       <ScrollView>
         <View className="w-full justify-center min-h-[85vh] px-4 my-6">
           <Image
-            source={images.logo}
+            source={images.logoSmall}
             resizeMode="contain"
             className="w-[115px] h-[35px]"
           />
@@ -63,7 +63,7 @@ export default function SignIn() {
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
             keyboardType="default"
-            secureTextEntry
+            
           />
 
           <CustomButton

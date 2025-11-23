@@ -20,7 +20,6 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-        
       },
       "package": "com.sd.learnify",
       "edgeToEdgeEnabled": true,
@@ -31,6 +30,12 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "114449f9-90f4-475c-8186-5b4d94e01394"
+      }
+    }
   }
 }
