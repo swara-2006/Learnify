@@ -5,7 +5,7 @@ export interface GeneratedFlashcard {
   answer: string;
 }
 
-const GEMINI_API_KEY = "AIzaSyCU4Dmnom0giPxWc26yANBYvIGOzgIoqMA"; // <-- PUT YOUR API KEY
+const GEMINI_API_KEY = ""; // <-- PUT YOUR API KEY
 const ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
 
 // Primary + fallback models
